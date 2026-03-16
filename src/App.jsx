@@ -20,7 +20,7 @@ const LAYOUTS = [
     id: 'single',
     name: '1 ảnh',
     bgImage: '',
-    frameOverlay: 'http://localhost:5173/pingbooth/1.1.png',
+    frameOverlay: 'https://linncoder.github.io/pingbooth/1.1.png',
     showSlotBorders: true,
     slots: [{ id: 1, top: 4, left: 4, width: 92, height: 80 }],
   },
@@ -28,7 +28,7 @@ const LAYOUTS = [
     id: 'grid',
     name: '4 ảnh',
     bgImage: '',
-    frameOverlay: 'http://localhost:5173/pingbooth/4.1.png',
+    frameOverlay: 'https://linncoder.github.io/pingbooth/4.1.png',
     showSlotBorders: true,
     slots: [
       { id: 1, top: 4.5, left: 4.5, width: 45, height: 40 },
@@ -41,7 +41,7 @@ const LAYOUTS = [
     id: 'triple',
     name: '6 ảnh',
     bgImage: '',
-    frameOverlay: 'http://localhost:5173/pingbooth/6.1.png',
+    frameOverlay: 'https://linncoder.github.io/pingbooth/6.1.png',
     showSlotBorders: true,
     slots: [
       { id: 1, top: 3, left: 4.5, width: 45, height: 28 },
