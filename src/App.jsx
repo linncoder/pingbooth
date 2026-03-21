@@ -37,6 +37,7 @@ const LAYOUTS = [
   {
     id: "single",
     name: "1 ảnh",
+    category: "Cơ bản",
     bgImage: "",
     frameOverlay: "https://linncoder.github.io/pingbooth/1.1.png",
     showSlotBorders: true,
@@ -45,6 +46,7 @@ const LAYOUTS = [
   {
     id: "grid",
     name: "4 ảnh",
+    category: "Lưới",
     bgImage: "",
     frameOverlay: "https://linncoder.github.io/pingbooth/4.1.png",
     showSlotBorders: true,
@@ -58,6 +60,7 @@ const LAYOUTS = [
   {
     id: "triple",
     name: "6 ảnh",
+    category: "Đa ô",
     bgImage: "",
     frameOverlay: "https://linncoder.github.io/pingbooth/6.1.png",
     showSlotBorders: true,
@@ -139,9 +142,10 @@ export default function PingBoothApp() {
             <div className="w-12" />
           )}
 
-          <div className="flex  origin-center">
+          {/* Logo Session */}
+          <div className="flex origin-center">
             <svg
-              class="h-15 md:h-12 w-auto"
+              className="h-12 w-auto"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 375 127"
               fill="none"
@@ -166,7 +170,7 @@ export default function PingBoothApp() {
                   height="73.24"
                   rx="14"
                   stroke="black"
-                  stroke-width="4"
+                  strokeWidth="4"
                 />
                 <path
                   d="M220.848 76.1951C218.282 76.1951 217 74.9244 217 72.3841V36.9789C217 34.4385 218.282 33.1679 220.848 33.1679H235.932C238.207 33.1679 240.255 33.578 242.077 34.3972C243.939 35.2165 245.407 36.4458 246.484 38.0853C247.601 39.6834 248.16 41.6705 248.16 44.0476C248.16 46.5879 247.58 48.699 246.422 50.3788C245.304 52.0585 243.877 53.165 242.139 53.698C243.587 53.9026 244.89 54.4971 246.049 55.4806C247.249 56.4227 248.2 57.6732 248.904 59.2301C249.608 60.7869 249.96 62.5493 249.96 64.5163C249.96 68.5731 248.718 71.5437 246.235 73.429C243.793 75.273 240.545 76.1951 236.49 76.1951H220.848ZM225.069 68.819H235.373C237.318 68.819 238.787 68.3887 239.78 67.5282C240.773 66.6676 241.27 65.2952 241.27 63.4098C241.27 61.6071 240.69 60.275 239.532 59.4145C238.373 58.5126 236.987 58.0622 235.373 58.0622H225.069V68.819ZM225.069 50.6246H234.318C237.67 50.6246 239.346 48.8622 239.346 45.3384C239.346 43.7403 238.89 42.5522 237.98 41.7733C237.111 40.9541 235.89 40.544 234.318 40.544H225.069V50.6246ZM277.016 77.24C273.085 77.24 269.567 76.318 266.464 74.474C263.36 72.6299 260.919 70.0282 259.139 66.6676C257.401 63.2667 256.532 59.2714 256.532 54.6815C256.532 50.0513 257.401 46.0559 259.139 42.6953C260.919 39.2945 263.36 36.6715 266.464 34.8275C269.567 32.9422 273.085 32 277.016 32C280.948 32 284.444 32.9422 287.506 34.8275C290.609 36.6715 293.03 39.2945 294.768 42.6953C296.548 46.0559 297.437 50.0513 297.437 54.6815C297.437 59.2714 296.548 63.2667 294.768 66.6676C293.03 70.0282 290.609 72.6299 287.506 74.474C284.444 76.318 280.948 77.24 277.016 77.24ZM277.016 69.4951C279.499 69.4951 281.63 68.8804 283.409 67.6511C285.231 66.3804 286.616 64.6392 287.568 62.4264C288.561 60.2135 289.058 57.6319 289.058 54.6815C289.058 51.6897 288.561 49.0879 287.568 46.8751C286.616 44.6623 285.231 42.9412 283.409 41.7118C281.63 40.4412 279.499 39.8064 277.016 39.8064C274.575 39.8064 272.444 40.4412 270.622 41.7118C268.844 42.9412 267.457 44.6623 266.464 46.8751C265.471 49.0879 264.974 51.6897 264.974 54.6815C264.974 57.6319 265.471 60.2135 266.464 62.4264C267.457 64.6392 268.844 66.3804 270.622 67.6511C272.444 68.8804 274.575 69.4951 277.016 69.4951ZM306.363 76.1951C304.294 76.1951 303.032 75.7033 302.576 74.7198C302.163 73.6951 302.349 72.5483 303.135 71.2777L314.308 53.8209L304.128 38.0853C302.97 36.4871 302.701 35.2779 303.321 34.4587C303.942 33.5982 305.267 33.1679 307.294 33.1679C309.488 33.1679 311.122 34.0899 312.197 35.9339L318.653 46.5678L325.046 35.9339C326.123 34.0899 327.757 33.1679 329.95 33.1679C333.84 33.1679 334.895 34.8073 333.115 38.0853L322.998 53.8209L334.171 71.2777C335.04 72.6713 335.226 73.8391 334.729 74.7813C334.233 75.7235 332.95 76.1951 330.881 76.1951C328.688 76.1951 327.054 75.273 325.977 73.429L318.653 61.0741L311.266 73.429C310.191 75.273 308.557 76.1951 306.363 76.1951Z"
@@ -187,7 +191,7 @@ export default function PingBoothApp() {
                   height="73.2377"
                   rx="14"
                   stroke="black"
-                  stroke-width="4"
+                  strokeWidth="4"
                 />
                 <path
                   d="M43.854 76.1928C41.2847 76.1928 40 74.8406 40 72.1362V37.2245C40 34.52 41.3044 33.1678 43.9132 33.1678H59.2105C61.8193 33.1678 64.0724 33.5779 65.9697 34.3971C67.9066 35.2163 69.3889 36.5484 70.4166 38.3923C71.4838 40.2362 72.0174 42.715 72.0174 45.8295C72.0174 48.944 71.4838 51.4429 70.4166 53.3281C69.3889 55.172 67.9066 56.5242 65.9697 57.3847C64.0724 58.2039 61.8193 58.614 59.2105 58.614H47.7079V72.1362C47.7079 74.8406 46.4232 76.1928 43.854 76.1928ZM47.7079 51.1769H58.1432C59.922 51.1769 61.3252 50.7668 62.3529 49.9476C63.3806 49.1284 63.8945 47.755 63.8945 45.8295C63.8945 43.9442 63.3806 42.592 62.3529 41.7728C61.3252 40.9536 59.922 40.5435 58.1432 40.5435H47.7079V51.1769ZM83.1693 76.1928C80.6001 76.1928 79.3154 74.8406 79.3154 72.1362V37.2245C79.3154 34.52 80.6001 33.1678 83.1693 33.1678C85.7386 33.1678 87.0233 34.52 87.0233 37.2245V72.1362C87.0233 74.8406 85.7386 76.1928 83.1693 76.1928ZM100.656 76.1928C98.0865 76.1928 96.8018 74.8406 96.8018 72.1362V37.2245C96.8018 34.52 98.0865 33.1678 100.656 33.1678H101.486C103.462 33.1678 105.024 34.0485 106.17 35.8108L123.068 62.2404V37.2245C123.068 34.52 124.372 33.1678 126.981 33.1678C129.55 33.1678 130.835 34.52 130.835 37.2245V72.1362C130.835 74.8406 129.609 76.1928 127.159 76.1928H126.507C124.451 76.1928 122.89 75.3121 121.823 73.5498L104.51 46.1368V72.1362C104.51 74.8406 103.225 76.1928 100.656 76.1928ZM157.829 77.2377C154.075 77.2377 150.734 76.3157 147.809 74.4718C144.923 72.6279 142.651 70.0262 140.991 66.6658C139.37 63.2651 138.56 59.27 138.56 54.6803C138.56 50.0503 139.37 46.0552 140.991 42.6948C142.651 39.2941 144.923 36.6713 147.809 34.8274C150.734 32.9421 154.075 32 157.829 32C160.161 32 162.355 32.3275 164.411 32.9834C166.505 33.6394 168.364 34.4999 169.984 35.5649C171.051 36.2612 171.625 37.1217 171.704 38.1464C171.782 39.1299 171.427 40.1334 170.636 41.1582C169.885 42.1829 169.055 42.7149 168.146 42.7562C167.276 42.7975 166.308 42.4902 165.241 41.8343C164.174 41.2196 163.007 40.7279 161.743 40.3591C160.478 39.9904 159.174 39.806 157.829 39.806C155.498 39.806 153.482 40.4408 151.782 41.7114C150.122 42.9406 148.837 44.6616 147.928 46.8744C147.058 49.0871 146.623 51.6887 146.623 54.6803C146.623 57.6306 147.058 60.2121 147.928 62.4248C148.837 64.6375 150.122 66.3787 151.782 67.6493C153.482 68.8786 155.498 69.4932 157.829 69.4932C159.648 69.4932 161.13 69.329 162.276 69.0015C163.422 68.6327 164.391 68.1823 165.182 67.6493V59.3516H162.81C160.201 59.3516 158.897 58.1223 158.897 55.6637C158.897 53.2052 160.201 51.9759 162.81 51.9759H169.095C171.704 51.9759 173.008 53.3281 173.008 56.0325V69.7391C173.008 70.8454 172.83 71.7875 172.474 72.5664C172.119 73.304 171.486 73.8985 170.577 74.3489C168.759 75.291 166.743 76.0084 164.529 76.5001C162.316 76.9919 160.083 77.2377 157.829 77.2377Z"
@@ -202,9 +206,9 @@ export default function PingBoothApp() {
                   width="375"
                   height="109.24"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     type="matrix"
@@ -239,9 +243,7 @@ export default function PingBoothApp() {
 
         <div className="flex-1 relative overflow-hidden bg-[radial-gradient(#d1d5db_1.5px,transparent_1.5px)] [background-size:20px_20px]">
           <AnimatePresence mode="wait">
-            {step === "home" && (
-              <HomeView key="home" onNext={() => goNext("frames")} />
-            )}
+            {step === "home" && <HomeView key="home" onNext={() => goNext("frames")} />}
             {step === "frames" && (
               <FramesView
                 key="frames"
@@ -305,7 +307,7 @@ function HomeView({ onNext }) {
           size={56}
           strokeWidth={2.5}
         />
-        <div className="absolute  flex -bottom-4 -left-4 bg-yellow-300 border-[2px] border-black rounded-full px-3 py-1 rotate-[-15deg] z-30 shadow-[2px_2px_0_0_#000]">
+        <div className="absolute flex -bottom-4 -left-4 bg-yellow-300 border-[2px] border-black rounded-full px-3 py-1 rotate-[-15deg] z-30 shadow-[2px_2px_0_0_#000]">
           <span className="text-black font-black text-sm">PingBooth </span>
           <span className="text-black font-black text-sm">
             <Camera
@@ -340,6 +342,14 @@ function HomeView({ onNext }) {
    2. FRAMES SELECTION VIEW
 ========================================= */
 function FramesView({ onSelect }) {
+  const [activeCategory, setActiveCategory] = useState("Tất cả");
+  const categories = ["Tất cả", ...new Set(LAYOUTS.map((l) => l.category))];
+
+  const filteredLayouts =
+    activeCategory === "Tất cả"
+      ? LAYOUTS
+      : LAYOUTS.filter((l) => l.category === activeCategory);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 100 }}
@@ -347,61 +357,83 @@ function FramesView({ onSelect }) {
       exit={{ opacity: 0, x: -100 }}
       className="absolute inset-0 w-full h-full p-6 flex flex-col overscroll-none"
     >
-      <h3 className="text-xl font-black mb-6 flex items-center gap-2 text-black uppercase tracking-wider shrink-0">
+      <h3 className="text-xl font-black mb-4 flex items-center gap-2 text-black uppercase tracking-wider shrink-0">
         <LayoutTemplate className="text-[#fe005b]" strokeWidth={3} /> Chọn
         Layout
       </h3>
 
-      <div className="grid grid-cols-2 gap-4 sm:gap-5 flex-1 overflow-y-auto pb-10 overscroll-none">
-        {LAYOUTS.map((layout) => (
+      <div className="flex gap-2 overflow-x-auto pb-4 mb-2 shrink-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+        {categories.map((cat) => (
           <button
-            key={layout.id}
-            onClick={() => onSelect(layout.id)}
-            // ĐÃ SỬA: Làm cho Card bo tròn mượt mà, viền mỏng và thanh lịch hơn, hiệu ứng hover đẹp và không bị thô
-            className="group relative bg-white rounded-[24px] border-2 border-gray-200 overflow-hidden hover:border-[#fe005b] hover:shadow-[0_10px_25px_rgba(254,0,91,0.15)] hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 flex flex-col"
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={`px-5 py-2 rounded-full border-[2px] font-black text-xs sm:text-sm whitespace-nowrap transition-all shrink-0 ${
+              activeCategory === cat
+                ? "bg-[#fe005b] text-white border-black shadow-[0_3px_0_0_#000] -translate-y-[2px]"
+                : "bg-white text-gray-500 border-gray-200 hover:border-[#fe005b] hover:text-[#fe005b]"
+            }`}
           >
-            <div
-              className="relative w-full aspect-[2/3] bg-center bg-[length:100%_100%] bg-gray-50/50"
-              style={{
-                backgroundColor: layout.bgImage
-                  ? "transparent"
-                  : layout.frameOverlay
-                    ? "#ffffff"
-                    : `${THEME.pink}10`,
-                backgroundImage: layout.bgImage
-                  ? `url(${layout.bgImage})`
-                  : undefined,
-              }}
-            >
-              {layout.slots.map((slot) => (
-                <div
-                  key={slot.id}
-                  className="absolute bg-white/90 rounded-[4px] shadow-sm"
-                  style={{
-                    top: `${slot.top}%`,
-                    left: `${slot.left}%`,
-                    width: `${slot.width}%`,
-                    height: `${slot.height}%`,
-                    border: layout.showSlotBorders
-                      ? "1px solid rgba(0,0,0,0.06)"
-                      : "none",
-                  }}
-                />
-              ))}
-              {layout.frameOverlay && (
-                <img
-                  src={layout.frameOverlay}
-                  alt="Frame"
-                  className="absolute inset-0 w-full h-full z-10 pointer-events-none drop-shadow-sm"
-                />
-              )}
-            </div>
-            {/* ĐÃ SỬA: Phần text bên dưới card hiển thị thanh nhã hơn */}
-            <div className="py-3.5 bg-white border-t-2 border-gray-50 text-gray-500 font-bold uppercase tracking-widest text-xs sm:text-sm group-hover:text-[#fe005b] group-hover:bg-pink-50/30 transition-colors w-full">
-              {layout.name}
-            </div>
+            {cat}
           </button>
         ))}
+      </div>
+
+      {/* Sửa chữa Grid Overflow: Cấu trúc lại để các Frame Card hiển thị đầy đủ, không bị chồng lên nhau hoặc cắt xén */}
+      <div className="grid grid-cols-2 gap-3 sm:gap-5 flex-1 overflow-y-auto pb-10 overscroll-none content-start items-start">
+        <AnimatePresence mode="wait">
+          {filteredLayouts.map((layout) => (
+            <motion.button
+              key={layout.id}
+              layout
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => onSelect(layout.id)}
+              className="group relative w-full bg-white rounded-[24px] border-2 border-gray-200 overflow-hidden hover:border-[#fe005b] hover:shadow-[0_10px_25px_rgba(254,0,91,0.15)] hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 flex flex-col h-fit"
+            >
+              <div
+                className="relative w-full aspect-[2/3] bg-center bg-[length:100%_100%] bg-gray-50/50 shrink-0 overflow-hidden"
+                style={{
+                  backgroundColor: layout.bgImage
+                    ? "transparent"
+                    : layout.frameOverlay
+                      ? "#ffffff"
+                      : `${THEME.pink}10`,
+                  backgroundImage: layout.bgImage
+                    ? `url(${layout.bgImage})`
+                    : undefined,
+                }}
+              >
+                {layout.slots.map((slot) => (
+                  <div
+                    key={slot.id}
+                    className="absolute bg-white/90 shadow-sm"
+                    style={{
+                      top: `${slot.top}%`,
+                      left: `${slot.left}%`,
+                      width: `${slot.width}%`,
+                      height: `${slot.height}%`,
+                      border: layout.showSlotBorders
+                        ? "1px solid rgba(0,0,0,0.06)"
+                        : "none",
+                    }}
+                  />
+                ))}
+                {layout.frameOverlay && (
+                  <img
+                    src={layout.frameOverlay}
+                    alt="Frame"
+                    className="absolute inset-0 w-full h-full object-contain z-10 pointer-events-none drop-shadow-sm"
+                  />
+                )}
+              </div>
+              <div className="py-2.5 sm:py-3.5 bg-white border-t-2 border-gray-50 text-gray-500 font-bold uppercase tracking-widest text-xs sm:text-sm group-hover:text-[#fe005b] group-hover:bg-pink-50/30 transition-colors w-full shrink-0">
+                {layout.name}
+              </div>
+            </motion.button>
+          ))}
+        </AnimatePresence>
       </div>
     </motion.div>
   );
@@ -424,7 +456,7 @@ function EditorView({ layout, photos, setPhotos, onNext }) {
     const slotHeightPx = (slot.height / 100) * UI_FRAME_HEIGHT;
     const baseScale = Math.max(
       slotWidthPx / photoData.width,
-      slotHeightPx / photoData.height,
+      slotHeightPx / photoData.height
     );
 
     setPhotos((prev) => ({
@@ -559,7 +591,7 @@ function EditorView({ layout, photos, setPhotos, onNext }) {
             <img
               src={layout.frameOverlay}
               alt="Frame Overlay"
-              className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+              className="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none"
             />
           )}
 
@@ -937,7 +969,7 @@ function ExportView({ layout, photos, onReset }) {
 
             ctx.scale(
               t.scale * t.userScale * t.flipX * SCALE,
-              t.scale * t.userScale * t.flipY * SCALE,
+              t.scale * t.userScale * t.flipY * SCALE
             );
 
             ctx.rotate((t.rotate * Math.PI) / 180);
@@ -947,7 +979,7 @@ function ExportView({ layout, photos, onReset }) {
               -photo.width / 2,
               -photo.height / 2,
               photo.width,
-              photo.height,
+              photo.height
             );
           }
           ctx.restore();
@@ -1071,6 +1103,8 @@ function ExportView({ layout, photos, onReset }) {
       className="absolute inset-0 w-full h-full overflow-y-auto overscroll-none"
     >
       <div className="min-h-full flex flex-col p-6 items-center">
+        
+        {/* Đã xóa Popover ở đây và dời xuống khung chứa ảnh */}
         <h3 className="text-2xl font-black mb-6 text-black text-center uppercase tracking-wider shrink-0 mt-2">
           Tadaaa! ✨<br />
           Thành quả của bạn
@@ -1084,6 +1118,26 @@ function ExportView({ layout, photos, onReset }) {
             </div>
           ) : (
             <div className="relative w-full max-w-[320px]">
+              
+              {/* MỚI: Popover được đặt ngay trên ảnh và thêm hiệu ứng loop nảy liên tục */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, type: "spring", stiffness: 250 }}
+                className="absolute -top-6 -right-2 sm:-right-8 z-30"
+              >
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                  className="relative bg-yellow-300 text-black text-[10px] sm:text-[11px] font-black px-3 py-1.5 rounded-full border-[2px] border-black shadow-[2px_2px_0_0_#000] whitespace-nowrap rotate-[-4deg]"
+                >
+                  Tìm Ping và in ảnh nào 🎉
+                  {/* Đuôi của bong bóng */}
+                  <div className="absolute -bottom-[5px] left-6 w-0 h-0 border-l-[5px] border-l-transparent border-t-[6px] border-t-black border-r-[5px] border-r-transparent"></div>
+                  <div className="absolute -bottom-[3px] left-[24.5px] w-0 h-0 border-l-[4.5px] border-l-transparent border-t-[6px] border-t-yellow-300 border-r-[4.5px] border-r-transparent"></div>
+                </motion.div>
+              </motion.div>
+
               <img
                 src={resultImage}
                 alt="Result"
